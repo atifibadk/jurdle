@@ -49,6 +49,7 @@ footer {
     margin: auto;
     text-align: center;
     border-radius: 0.5rem;
+    text-transform: lowercase;
 }
 
 .input_display {

@@ -2,8 +2,8 @@ const wordDisplayElement = document.getElementById("jumbleDisplay")
 const wordInputElement = document.getElementById("wordInput")
 const inputDisplayELement = document.getElementById("inputDisplay")
 const timerElement = document.getElementById("timer")
-const intialTime = "5"
-const deductTimeDiff = 5
+const intialTime = "15"
+const deductTimeDiff = 15
 const firstDate = new Date('4/3/2022')
 
 
@@ -12,7 +12,7 @@ const word_array =["mango", "berry" , "mint"]
 wordInputElement.addEventListener('input', () => {
 
     const arrayJumble = get_word_of_day().split('')
-    const arrayInput = wordInputElement.value.split('')
+    const arrayInput = wordInputElement.value.toLowerCase().split('')
     inputDisplayELement.innerHTML = null
     arrayInput.forEach((characterData,index) => {
        
@@ -33,7 +33,7 @@ wordInputElement.addEventListener('input', () => {
     });
     setTimeout(function(){
 
-        if(wordInputElement.value === get_word_of_day()) {
+        if(wordInputElement.value.toLowerCase() === get_word_of_day()) {
             clearInterval(intervalId)
             wordInputElement.disabled = true
             wordDisplayElement.innerText = get_word_of_day()
@@ -105,7 +105,7 @@ function start_counter(){
         if(timerElement.innerText === "0") {
             wordInputElement.disabled = true
             clearInterval(intervalId)
-            if(wordInputElement.value === get_word_of_day()) {
+            if(wordInputElement.value.toLowerCase() === get_word_of_day()) {
                 wordDisplayElement.innerText = get_word_of_day()
                 inputDisplayELement.innerText = "Congratulations! You won 😋"
                 inputDisplayELement.classList.add("correct")
