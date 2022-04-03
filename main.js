@@ -6,8 +6,8 @@ const intialTime = "15"
 const deductTimeDiff = 15
 const firstDate = new Date('4/3/2022')
 
-
-const word_array =["mango", "berry" , "mint"]
+import {word_array} from './data.js'
+//const word_array =["mango", "berry" , "mint"]
 
 wordInputElement.addEventListener('input', () => {
 
@@ -59,11 +59,11 @@ function replace_char (str,index,r) {
 }
 
 function swap_char(s,i,j) {
-    c1 = s[i]
-    c2 = s[j]
+    let c1 = s[i]
+    let c2 = s[j]
 
-    s1 = replace_char(s,i,c2)
-    s2 = replace_char(s1, j, c1)
+    let s1 = replace_char(s,i,c2)
+    let s2 = replace_char(s1, j, c1)
 
     return s2
 } 
@@ -74,7 +74,7 @@ function jumble_word(str) {
     let i
     let j
 
-     for(k=0;k<round;k++) {
+     for(let k=0;k<round;k++) {
         i = Math.floor(Math.random() * str.length);
         j = Math.floor(Math.random() * str.length);
         str = swap_char(str,i,j)  
@@ -88,11 +88,11 @@ function jumble_word(str) {
         }
      return str;
 }
-
+let index
 function get_word_of_day() {
     index = get_diff_days(new Date())
     console.log(index)
-    return word_array[index]
+    return word_array[index].toLowerCase()
 }
 
 let startTime

@@ -4,7 +4,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url("./background.jpeg");
+    background-color: #e7bcbc;
+    /*background-image: url("./background.jpeg");*/
 }
 
 footer {
