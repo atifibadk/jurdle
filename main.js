@@ -2,8 +2,8 @@ const wordDisplayElement = document.getElementById("jumbleDisplay")
 const wordInputElement = document.getElementById("wordInput")
 const inputDisplayELement = document.getElementById("inputDisplay")
 const timerElement = document.getElementById("timer")
-const intialTime = "15"
-const deductTimeDiff = 15
+const intialTime = "60"
+const deductTimeDiff = 60
 const firstDate = new Date('4/3/2022')
 
 const winMsg = "Congratulations! You won 😋"
